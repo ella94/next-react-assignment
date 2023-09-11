@@ -1,5 +1,6 @@
 'use client';
 import { ModalContext } from '../context/modal-provider';
+import { useRouter } from 'next/navigation';
 
 // Hooks
 import { useState, useContext } from 'react';
@@ -24,6 +25,7 @@ export default function login() {
     } /* form state에 관한 정보를 담고 있는 객체 */,
   } = useForm();
 
+  const router = useRouter();
   const { show } = useContext(ModalContext);
 
   const onSubmit = async (data: any) => {
@@ -31,6 +33,7 @@ export default function login() {
 
     if (data.id == 'helloworld' && data.password == 'Qwer!234') {
       console.log('Login Success.');
+      router.push('/jobDetails');
     } else {
       show({
         title: 'Login Fail !',

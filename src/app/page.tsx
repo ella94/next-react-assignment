@@ -2,10 +2,6 @@
 import Login from './components/login';
 import SignUp from './components/signup';
 
-// modal
-//import { ModalFormProvider } from './context/page';
-import ModalProvider from './context/modal-provider';
-
 // Hooks
 import { ChangeEvent, useState } from 'react';
 
@@ -24,31 +20,29 @@ export default function App() {
 
   return (
     <div className="App">
-      <ModalProvider>
-        <Paper elevation={3} className="p-2 pb-12">
-          {checked ? (
-            <Chip
-              icon={<AccountCircleIcon />}
-              label="login"
-              variant="outlined"
-              color="info"
-            />
-          ) : (
-            <Chip
-              icon={<AccountCircleIcon />}
-              label="signup"
-              variant="outlined"
-              color="info"
-            />
-          )}
-          <Switch
-            checked={checked}
-            onChange={handleChange}
-            inputProps={{ 'aria-label': 'controlled' }}
+      <Paper elevation={3} className="p-2 pb-12">
+        {checked ? (
+          <Chip
+            icon={<AccountCircleIcon />}
+            label="login"
+            variant="outlined"
+            color="info"
           />
-          {checked ? <Login /> : <SignUp />}
-        </Paper>
-      </ModalProvider>
+        ) : (
+          <Chip
+            icon={<AccountCircleIcon />}
+            label="signup"
+            variant="outlined"
+            color="info"
+          />
+        )}
+        <Switch
+          checked={checked}
+          onChange={handleChange}
+          inputProps={{ 'aria-label': 'controlled' }}
+        />
+        {checked ? <Login /> : <SignUp />}
+      </Paper>
     </div>
   );
 }

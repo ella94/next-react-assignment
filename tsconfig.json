@@ -34,7 +34,7 @@
     "isolatedModules": true,                  /* 각 파일을 분리된 모듈로 트랜스파일 ('ts.transpileModule'과 비슷합니다). 꼭 import / export 로 닫아야하게끔 강제 */
     // * Babel 아닌 다른 Transpiler 사용시, 단일 파일단위로 Transpile 하기 때문에 본 옵션을 키는것이 좋음
     /* 엄격한 타입-확인 옵션 */
-    "strict": true,                           /* 모든 엄격한 타입-체킹 옵션 활성화 여부 */
+    "strict": false,                           /* 모든 엄격한 타입-체킹 옵션 활성화 여부 */
     // "noImplicitAny": true,                 /* 'any' 타입으로 구현된 표현식 혹은 정의 에러처리 여부 */
     // "strictNullChecks": true,              /* 엄격한 null 확인 여부 */
     // "strictFunctionTypes": true,           /* 함수 타입에 대한 엄격한 확인 여부 */
@@ -53,7 +53,8 @@
     "moduleResolution": "bundler",            /* 모듈 해석 방법 설정: 'node' (Node.js) 혹은 'classic' (TypeScript pre-1.6). */
     // "baseUrl": "./",                       /* non-absolute한 모듈 이름을 처리할 기준 디렉토리 */
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@data/*": ["./public/data/*"]
     },                                        /* 'baseUrl'를 기준으로 불러올 모듈의 위치를 재지정하는 엔트리 시리즈 */
     /* 상대경로가 아닌 절대경로를 사용할 것, import 시 '../././././././././Hello' 같은것을 방지하기 위해. VSCode 와 연동할 것 */
     // "rootDirs": [],                        /* 결합된 컨텐츠가 런타임에서의 프로젝트 구조를 나타내는 루트 폴더들의 목록 */
